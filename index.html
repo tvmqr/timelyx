@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timelyx — Manage Tasks. Master Time.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Inter:wght@400;700&family=Plus+Jakarta+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <a class="header__logo" href="#home">
+          <img class="header__logomark" src="images/logomark.svg" alt="" width="44" height="44" />
+          <img class="header__wordmark" src="images/logo-timelyx.svg" alt="Timelyx" width="138" height="38" />
+        </a>
+        <button id="burger" class="header__burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav">
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+        </button>
+        <nav id="nav" class="header__nav">
+          <a class="header__link header__link--active" href="#home">Home</a>
+          <a class="header__link" href="#about">About</a>
+          <a class="header__link" href="#solutions">Solutions</a>
+          <a class="header__link" href="#pricing">Pricing</a>
+          <a class="header__link" href="#resources">Resources</a>
+          <a class="header__link" href="#contact">Contact</a>
+        </nav>
+        <button class="btn btn--primary header__cta" type="button" data-open-modal>Get a Demo</button>
+      </div>
+    </header>
+
+    <div id="modal" class="modal" hidden>
+      <div class="modal__dialog">
+        <button class="modal__close" type="button" data-close-modal aria-label="Close">×</button>
+        <h2 class="modal__title">Get a Demo</h2>
+        <p class="modal__text">Manage Tasks. Master Time.</p>
+      </div>
+    </div>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero__inner">
+          <h1 class="hero__title">Where Tasks Flow, Teams Sync, and Time Works for You</h1>
+          <p class="hero__text">
+            The Simpler, Faster Way to Manage Work That Matters, helping you stay organized, aligned, and ahead with tools designed to simplify every step of your workflow.
+          </p>
+          <div class="hero__row">
+            <div class="hero__badge">
+              <span class="hero__badge-tag">SaaS</span>
+              <span class="hero__badge-copy">Manage Tasks. Master Time.</span>
+            </div>
+            <form class="hero__form" action="#" method="post">
+              <label class="visually-hidden" for="hero-email">Enter email</label>
+              <input class="hero__input" id="hero-email" type="email" name="email" placeholder="Enter email" />
+              <button class="btn btn--primary hero__submit" type="submit">Subscribe Now</button>
+            </form>
+          </div>
+          <img class="hero__image" src="images/dashboard-hero.png" alt="Timelyx dashboard" width="1248" height="832" />
+        </div>
+      </section>
+
+      <section class="features" id="about">
+        <div class="container">
+          <p class="section__eyebrow">Features Included</p>
+          <h2 class="section__title">Smart, Powerful Features Built to Elevate Your Productivity</h2>
+          <p class="section__lead">
+            Stay ahead with high-performance features designed to scale your SaaS and elevate productivity across every task, ensuring smoother workflows, faster execution, and a smarter way to manage growth.
+          </p>
+          <div class="features__filters">
+            <button class="filter-btn filter-btn--active" type="button" data-filter="all">All</button>
+            <button class="filter-btn" type="button" data-filter="collaboration">Collaborate in the Moment</button>
+            <button class="filter-btn" type="button" data-filter="design">Combines UX and UI subtly.</button>
+            <button class="filter-btn" type="button" data-filter="analytics">Measure Your Momentum</button>
+            <button class="filter-btn" type="button" data-filter="growth">Keep Tabs on Your Growth</button>
+            <button class="filter-btn" type="button" data-filter="ai">Smart Apps Built by AI</button>
+            <button class="filter-btn" type="button" data-filter="integrations">Integrated Workflows</button>
+          </div>
+          <div class="features__grid">
+            <div class="card feature-card" data-category="collaboration">
+              <h3 class="feature-card__title">Collaborate in the Moment</h3>
+              <img class="feature-card__image" src="images/feature-collaborate.png" alt="" width="585" height="345" />
+              <p class="feature-card__text">Stay in sync with real-time updates and collaborative commenting for seamless teamwork.</p>
+            </div>
+            <div class="card feature-card" data-category="design">
+              <h3 class="feature-card__title">Combines UX and UI subtly.</h3>
+              <img class="feature-card__image" src="images/feature-ux-ui.png" alt="" width="585" height="345" />
+              <p class="feature-card__text">With clarity, simplicity, and efficiency at its core, our UI lets you focus on what truly matters.</p>
+            </div>
+            <div class="card feature-card" data-category="analytics">
+              <h3 class="feature-card__title">Measure Your Momentum</h3>
+              <img class="feature-card__image" src="images/feature-momentum.png" alt="" width="585" height="345" />
+              <p class="feature-card__text">Get a clear view of your productivity and task management at a glance.</p>
+            </div>
+            <div class="card feature-card" data-category="growth">
+              <h3 class="feature-card__title">Keep Tabs on Your Growth</h3>
+              <img class="feature-card__image" src="images/feature-growth.png" alt="" width="585" height="345" />
+              <p class="feature-card__text">Stay ahead with insights that let you measure success and celebrate achievements as they happen.</p>
+            </div>
+            <div class="card feature-card" data-category="ai">
+              <h3 class="feature-card__title">Smart Apps Built by AI</h3>
+              <img class="feature-card__image" src="images/feature-ai.png" alt="" width="585" height="345" />
+              <p class="feature-card__text">AI-driven automation that organizes tasks and predicts deadlines so you can stay ahead.</p>
+            </div>
+            <div class="card feature-card" data-category="integrations">
+              <h3 class="feature-card__title">Integrated Workflows</h3>
+              <img class="feature-card__image" src="images/feature-workflows.png" alt="" width="585" height="345" />
+              <p class="feature-card__text">Effortlessly connect your favorite tools with our platform’s seamless integrations.</p>
+            </div>
+          </div>
+          <div id="cards-container"></div>
+        </div>
+      </section>
+
+      <section class="output" id="solutions">
+        <div class="container">
+          <p class="section__eyebrow">Output or Result</p>
+          <h2 class="section__title">Get Started Instantly, No Setup Required</h2>
+          <p class="section__lead">
+            Ready to use from the moment you launch, our platform requires no setup or training, letting you focus on what matters most.
+          </p>
+          <div class="output__steps">
+            <article class="step-card">
+              <span class="step-card__num">01</span>
+              <h3 class="step-card__title">Set Up Your Account &amp; Access New Opportunities</h3>
+              <p class="step-card__text">Begin the smoothest experience yet by setting up your account now.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-card__num">02</span>
+              <h3 class="step-card__title">Fluid, Fast, and Truly Real-Time Collaboration</h3>
+              <p class="step-card__text">Real-time teamwork means instant idea flow, faster task execution, and total team alignment.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-card__num">03</span>
+              <h3 class="step-card__title">Monitor Your Progress &amp; Stay Effortlessly Organized</h3>
+              <p class="step-card__text">Easily keep your progress in check and gain clarity with insightful visibility.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-card__num">04</span>
+              <h3 class="step-card__title">Insight-Driven Analysis for Next-Level Growth</h3>
+              <p class="step-card__text">Explore deeper performance clarity with analytics that reveal trends, gaps, and growth potential.</p>
+            </article>
+          </div>
+          <img class="output__image" src="images/dashboard-output-4c5551.png" alt="Timelyx product screen" width="1472" height="699" />
+        </div>
+      </section>
+
+      <section class="benefits" id="resources">
+        <div class="container">
+          <p class="section__eyebrow">Subscription Options</p>
+          <h2 class="section__title">The Reason Users Choose Us Again and Again</h2>
+          <p class="section__lead">
+            Our platform transforms task management into a truly seamless experience, allowing clients to effortlessly organize, track, and complete their work while enjoying greater efficiency and clarity every step of the way.
+          </p>
+          <div class="tabs" role="tablist">
+            <button class="tab tab--active" type="button" data-tab="tab1">Effortless Task Structuring</button>
+            <button class="tab" type="button" data-tab="tab2">Track Time Effortlessly</button>
+            <button class="tab" type="button" data-tab="tab3">Seamless Mobile Access</button>
+            <button class="tab" type="button" data-tab="tab4">Trusted and Protected</button>
+            <button class="tab" type="button" data-tab="tab5">Design Made Simple</button>
+          </div>
+          <div class="tab-panel tab-panel--active" id="tab1">
+            <img class="tab-panel__image" src="images/image-tab11-dark.png" alt="" width="906" height="680" />
+            <div class="tab-panel__content">
+              <h3 class="tab-panel__title">Bring Order to Chaos with Intelligent Task Management</h3>
+              <p class="tab-panel__text">
+                Simplify your workflow with intelligent task organization — break projects into manageable subtasks, prioritize effectively, set deadlines, and customize every step to fit your needs.
+              </p>
+              <ul class="tab-panel__list">
+                <li>Turning Complexity into Simple, Clear Solutions</li>
+                <li>Boost Efficiency, Accelerate Growth, and Optimize Your Workflow</li>
+              </ul>
+              <a class="btn btn--primary" href="#pricing">Get 14th-day Free Trial</a>
+            </div>
+          </div>
+          <div class="tab-panel" id="tab2">
+            <h3 class="tab-panel__title">Track Time Effortlessly</h3>
+          </div>
+          <div class="tab-panel" id="tab3">
+            <h3 class="tab-panel__title">Seamless Mobile Access</h3>
+          </div>
+          <div class="tab-panel" id="tab4">
+            <h3 class="tab-panel__title">Trusted and Protected</h3>
+          </div>
+          <div class="tab-panel" id="tab5">
+            <h3 class="tab-panel__title">Design Made Simple</h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing" id="pricing">
+        <div class="container">
+          <p class="section__eyebrow">Tailored Pricing Options</p>
+          <h2 class="section__title">Honest Plans, Clear Costs</h2>
+          <p class="section__lead">
+            Perfect for teams of all sizes, from solo users just getting started to large, fully distributed teams, our platform adapts seamlessly to meet every workflow need.
+          </p>
+          <div class="pricing__switch">
+            <button class="price-btn price-btn--active" type="button" data-period="month">Month</button>
+            <button class="price-btn" type="button" data-period="year">Year</button>
+          </div>
+          <div class="pricing__grid">
+            <article class="plan plan--outline">
+              <div class="plan__head">
+                <h3 class="plan__name">Enhanced Standard Plan</h3>
+                <p class="plan__price" data-month="26" data-year="26">$26</p>
+                <p class="plan__trial">15 Days Free Trial</p>
+                <button class="btn btn--primary plan__btn" type="button">Order Now</button>
+              </div>
+              <ul class="plan__list">
+                <li>Work Without Limits</li>
+                <li>Endless Projects &amp; Tasks</li>
+                <li>Smart Keyword Insights</li>
+                <li>Track &amp; Optimize Keywords</li>
+                <li>Monitor Your Keywords</li>
+                <li>Suitable for beginners</li>
+              </ul>
+            </article>
+            <article class="plan plan--filled">
+              <div class="plan__head">
+                <h3 class="plan__name">Premium Custom Tier</h3>
+                <p class="plan__price" data-month="52" data-year="52">$52</p>
+                <p class="plan__trial">15 Days Free Trial</p>
+                <button class="btn btn--ghost plan__btn plan__btn--light" type="button">Order Now</button>
+              </div>
+              <ul class="plan__list">
+                <li>Optimize With Keywords</li>
+                <li>Marketing Campaigns</li>
+                <li>Traffic Generation</li>
+                <li>Local video issuance</li>
+                <li>Automated management</li>
+                <li>Suitable for beginners</li>
+              </ul>
+            </article>
+          </div>
+          <p class="pricing__trust">Trusted by over 1.7 million companies worldwide</p>
+          <img class="pricing__logos" src="images/trusted-logos.svg" alt="Company logos" width="1290" height="30" />
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container">
+          <p class="section__eyebrow">User Appreciation</p>
+          <h2 class="section__title">Success Stories from Our Customers</h2>
+          <p class="section__lead">Our users are at the heart of everything we do, guiding every decision and shaping every feature.</p>
+          <div class="testimonials__grid">
+            <article class="testimonial-card">
+              <div class="testimonial-card__person">
+                <img class="testimonial-card__avatar" src="images/avatar-sarah-linda.png" alt="Sarah Linda" width="65" height="65" />
+                <div>
+                  <p class="testimonial-card__name">Sarah Linda</p>
+                  <p class="testimonial-card__role">Designer, Creative Studio</p>
+                </div>
+              </div>
+              <p class="testimonial-card__quote">We’ve explored multiple tools, yet this one strikes the ideal balance between ease of use and powerful team features</p>
+            </article>
+            <article class="testimonial-card">
+              <div class="testimonial-card__person">
+                <img class="testimonial-card__avatar" src="images/avatar-james-bond.png" alt="James Bond" width="65" height="65" />
+                <div>
+                  <p class="testimonial-card__name">James Bond</p>
+                  <p class="testimonial-card__role">Freelance Consultant</p>
+                </div>
+              </div>
+              <p class="testimonial-card__quote">I love how effortlessly I can organize tasks, assign roles, and track progress. It keeps me on top of everything without any stress.</p>
+            </article>
+            <article class="testimonial-card">
+              <div class="testimonial-card__person">
+                <img class="testimonial-card__avatar" src="images/avatar-priya-donald.png" alt="Priya Donald" width="65" height="65" />
+                <div>
+                  <p class="testimonial-card__name">Priya Donald</p>
+                  <p class="testimonial-card__role">UX Designer, TaskHive</p>
+                </div>
+              </div>
+              <p class="testimonial-card__quote">The integration options and clean interface make this the best task management tool we’ve used — highly recommended!</p>
+            </article>
+            <article class="testimonial-card">
+              <div class="testimonial-card__person">
+                <img class="testimonial-card__avatar" src="images/avatar-elena-rossi.png" alt="Elena Rossi" width="65" height="65" />
+                <div>
+                  <p class="testimonial-card__name">Elena Rossi</p>
+                  <p class="testimonial-card__role">Marketing Director, BrightPath</p>
+                </div>
+              </div>
+              <p class="testimonial-card__quote">We’ve tested many apps, but this one strikes the ideal balance between ease of use and the functionality our team requires.</p>
+            </article>
+            <article class="testimonial-card">
+              <div class="testimonial-card__person">
+                <img class="testimonial-card__avatar" src="images/avatar-anna-carter.png" alt="Anna Carter" width="65" height="65" />
+                <div>
+                  <p class="testimonial-card__name">Anna Carter</p>
+                  <p class="testimonial-card__role">Team Lead, CloudShift</p>
+                </div>
+              </div>
+              <p class="testimonial-card__quote">A truly intuitive tool that also meets every need of a growing team is rare, and this one delivers.</p>
+            </article>
+            <article class="testimonial-card">
+              <div class="testimonial-card__person">
+                <img class="testimonial-card__avatar" src="images/avatar-maria-lopez.png" alt="Maria Lopez" width="65" height="65" />
+                <div>
+                  <p class="testimonial-card__name">Maria Lopez</p>
+                  <p class="testimonial-card__role">Product Manager, FlowSync</p>
+                </div>
+              </div>
+              <p class="testimonial-card__quote">From day one to everyday operations, it’s exactly what our team needs — simple, smart, and super efficient.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq">
+        <div class="container">
+          <p class="section__eyebrow">Frequently Asked Questions</p>
+          <h2 class="section__title">Still Thinking? Find What You’re Looking For Below</h2>
+          <p class="section__lead">We’ve carefully gathered the most common questions to provide you with a smooth and fast start on our platform.</p>
+          <div class="accordion">
+            <div class="accordion-item">
+              <button class="accordion-header" type="button">
+                <span>1. What truly sets this apart from traditional task management tools?</span>
+                <img class="accordion-header__icon" src="images/icon-plus-56586a.png" alt="" width="24" height="24" />
+              </button>
+            </div>
+            <div class="accordion-item accordion-item--open">
+              <button class="accordion-header" type="button">
+                <span>2. Do I need any technical expertise to get started with this platform?</span>
+                <img class="accordion-header__icon" src="images/icon-plus-56586a.png" alt="" width="24" height="24" />
+              </button>
+              <div class="accordion-item__body">
+                <p>
+                  Our platform combines simplicity with powerful features like real-time collaboration, smart task organization, and automated workflows to help teams move faster with zero friction.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header" type="button">
+                <span>3. Is it possible to invite my team to join the workspace?</span>
+                <img class="accordion-header__icon" src="images/icon-plus-56586a.png" alt="" width="24" height="24" />
+              </button>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header" type="button">
+                <span>4. Can I share my workspace access with my team?</span>
+                <img class="accordion-header__icon" src="images/icon-plus-56586a.png" alt="" width="24" height="24" />
+              </button>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header" type="button">
+                <span>5. Can I send invitations for others to join my workspace?</span>
+                <img class="accordion-header__icon" src="images/icon-plus-56586a.png" alt="" width="24" height="24" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter" id="contact">
+        <div class="container">
+          <p class="section__eyebrow">Join Our Newsletter</p>
+          <h2 class="section__title">Start Your Journey to Smarter Task Managemen</h2>
+          <p class="section__lead">Register now and get a suite of tools designed to keep your tasks organized and on track.</p>
+          <div class="newsletter__visual">
+            <img class="newsletter__dash newsletter__dash--left" src="images/dashboard-4-left-b547c6.png" alt="" width="450" height="429" />
+            <img class="newsletter__hero" src="images/newsletter-hero.png" alt="Team collaborating" width="1536" height="1024" />
+            <img class="newsletter__dash newsletter__dash--right" src="images/dashboard-4-right-38e4c8.png" alt="" width="451" height="428" />
+          </div>
+          <form class="newsletter__form" id="contact-form" action="#" method="post" novalidate>
+            <div class="newsletter__field">
+              <label class="visually-hidden" for="contact-email">Enter email</label>
+              <input class="newsletter__input" id="contact-email" type="email" name="email" placeholder="Enter email" />
+              <span class="error-msg"></span>
+            </div>
+            <button class="btn btn--accent" type="submit">Subscribe Now</button>
+          </form>
+          <p class="newsletter__note">Join exclusive live sessions and learn from industry experts to level skills.</p>
+          <ul class="newsletter__perks">
+            <li>Special Discounts &amp; Offers</li>
+            <li>Webinars &amp; Workshops</li>
+            <li>User Spotlights</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <a class="header__logo" href="#home">
+            <img class="header__logomark" src="images/logomark.svg" alt="" width="44" height="44" />
+            <img class="header__wordmark" src="images/logo-timelyx.svg" alt="Timelyx" width="138" height="38" />
+          </a>
+          <p class="footer__tagline">Bring your website idea to life by guided SaaS assistance</p>
+          <a class="btn btn--accent footer__cta" href="#contact">Get Started With Us</a>
+        </div>
+        <div class="footer__col">
+          <h2 class="footer__heading">Product</h2>
+          <ul class="footer__list">
+            <li><a href="#resources">Documentation</a></li>
+            <li><a href="#resources">Changelog</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#solutions">Parsers</a></li>
+            <li>
+              <a href="#solutions">SDTF <span class="footer__new">New</span></a>
+            </li>
+            <li><a href="#solutions">Use Cases</a></li>
+            <li><a href="#resources">Launch Week</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h2 class="footer__heading">Resources</h2>
+          <ul class="footer__list">
+            <li><a href="#resources">Guide</a></li>
+            <li><a href="#resources">Blog</a></li>
+            <li><a href="#resources">Customers</a></li>
+            <li><a href="#contact">Help Center</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h2 class="footer__heading">Links</h2>
+          <ul class="footer__list">
+            <li><a href="#resources">Press kit</a></li>
+            <li><a href="#about">Climate</a></li>
+            <li><a href="#contact">Jobs</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__legal">
+            <a href="#contact">Privacy policy</a>
+            <a href="#contact">Terms of use</a>
+            <a href="#contact">Security</a>
+          </div>
+          <p class="footer__copy">©2025 <strong>Sasico</strong> · All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>

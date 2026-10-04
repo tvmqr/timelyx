@@ -28,3 +28,75 @@ windowGetADemo.addEventListener('click', function(event) {
         windowGetADemo.hidden = true;
     }
 });
+
+
+
+// ===== BURGER =====
+
+const burger = document.querySelector('#burger');
+const nav = document.querySelector('#nav');
+
+burger.addEventListener('click', function () {
+    nav.classList.toggle('active');
+
+    const isOpen = nav.classList.contains('active');
+    burger.setAttribute('aria-expanded', isOpen);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ===== HERO FORM =====
+
+const heroForm = document.querySelector('#hero-form');
+const heroEmail = document.querySelector('#hero-email');
+const heroError = heroForm.querySelector('.error-msg');
+const heroSubmit = heroForm.querySelector('.hero__submit');
+const heroSubmitText = heroSubmit.textContent;
+
+heroForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    if (heroEmail.value.trim() === '' || !heroEmail.checkValidity()) {
+        heroError.style.color = '';
+        heroEmail.classList.add('error');
+        heroError.textContent = 'Enter a valid email';
+    } else {
+        heroEmail.value = '';
+        heroEmail.classList.remove('error');
+        heroError.textContent = '';
+        heroError.style.color = '#4ade80';
+        heroError.textContent = 'Thanks! Check your inbox';
+
+        heroSubmit.textContent = 'Subscribed ✓';
+        heroSubmit.disabled = true;
+
+        setTimeout(() => {
+            heroSubmit.textContent = heroSubmitText;
+            heroSubmit.disabled = false;
+            heroError.textContent = '';
+        }, 2000);
+    }
+});
+
+
+
+
+
+
+
+
+
+

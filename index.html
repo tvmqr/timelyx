@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timelyx — Manage Tasks. Master Time.</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +26,7 @@
               <img class="header__wordmark" src="images/logo-timelyx.svg" alt="Timelyx" width="138" height="38">
           </a>
 
-          <button id="burger" class="header__burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav">
+          <button id="burger" class="header__burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav">
               <span class="header__burger-line"></span>
               <span class="header__burger-line"></span>
               <span class="header__burger-line"></span>
@@ -58,6 +59,11 @@
 
         <!-- ===== HERO ===== -->
         <section class="hero" id="home">
+
+            <div class="hero__bg" aria-hidden="true">
+                <img src="images/background-image.png" alt="">
+            </div>
+
             <div class="container hero__inner">
 
                 <h1 class="hero__title">Where Tasks Flow, Teams Sync, and Time Works for You</h1>
@@ -67,23 +73,27 @@
                 </p>
 
                 <div class="hero__row">
-
                     <div class="hero__badge">
                         <span class="hero__badge-tag">SaaS</span>
                         <span class="hero__badge-copy">Manage Tasks. Master Time.</span>
                     </div>
 
-                    <form class="hero__form" action="#" method="post">
+                    <form class="hero__form" id="hero-form" action="#" method="post" novalidate>
                         <label class="visually-hidden" for="hero-email">Enter email</label>
                         <input class="hero__input" id="hero-email" type="email" name="email" placeholder="Enter email">
+                        <span class="error-msg"></span>
                         <button class="btn btn--primary hero__submit" type="submit">Subscribe Now</button>
                     </form>
-
                 </div>
 
-                <img class="hero__image" src="images/dashboard-hero.png" alt="Timelyx dashboard" width="1248" height="832">
-
             </div>
+
+            <div class="hero__showcase">
+                <div class="hero__image">
+                    <img src="images/dashboard-hero.webp" alt="Timelyx dashboard" width="1248" height="832">
+                </div>
+            </div>
+
         </section>
 
         <!-- ===== FEATURES ===== -->

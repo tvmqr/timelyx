@@ -45,6 +45,35 @@ burger.addEventListener('click', function () {
 
 
 
+// ===== Features =====
+
+const filterBtn = document.querySelectorAll('.filter-btn');
+const card = document.querySelectorAll('.feature-card');
+
+filterBtn.forEach(btn => {
+    btn.addEventListener('click', () => {
+
+        filterBtn.forEach(filt => {
+            filt.classList.remove('filter-btn--active');
+        });
+        btn.classList.add('filter-btn--active');
+
+        const activeFilter = btn.dataset.filter;
+
+        card.forEach(c => {
+            if (activeFilter === 'all' || c.dataset.category === activeFilter) {
+                c.classList.remove('hidden');
+            } else {
+                c.classList.add('hidden');
+            }
+        });
+    });
+});
+
+
+
+// ===== BENEFITS / TABS =====
+
 
 
 

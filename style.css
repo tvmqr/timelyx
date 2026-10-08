@@ -310,7 +310,7 @@ input {
 
 .hero {
     position: relative;
-    padding: 80px 0 120px;
+    padding: 80px 0 0;
     overflow: hidden;
 }
 
@@ -475,6 +475,8 @@ input {
     transition: background-color 5000s ease-in-out 0s;
 }
 
+
+
 /* ===== SECTION PADDING ===== */
 
 .features,
@@ -484,8 +486,10 @@ input {
 .testimonials,
 .faq,
 .newsletter {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-3xl) 0 0;
 }
+
+
 
 /* ===== FEATURES ===== */
 
@@ -525,9 +529,30 @@ input {
 /* grid */
 
 .features__grid {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    padding: 40px;
+    border-radius: 30px;
+}
+
+.features__grid::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    bottom: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    background: url('images/background-image.png') center / 100% 100% no-repeat;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.features__grid > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* card */
@@ -551,7 +576,6 @@ input {
 
 .feature-card__image {
     width: 100%;
-    border-radius: var(--radius-md);
 }
 
 .feature-card__text {
@@ -609,7 +633,28 @@ input {
     color: var(--color-text-muted);
 }
 
+.output__showcase {
+    position: relative;
+    padding: 40px;
+    border-radius: 30px;
+}
+
+.output__showcase::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    bottom: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    background: url('images/background-image.png') center / 100% 100% no-repeat;
+    z-index: 0;
+    pointer-events: none;
+}
+
 .output__image {
+    position: relative;
+    z-index: 1;
     width: 100%;
     border-radius: var(--radius-xl);
 }
@@ -655,10 +700,31 @@ input {
 }
 
 .tab-panel--active {
+    position: relative;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 60px;
     align-items: center;
+    padding: 40px;
+    border-radius: 30px;
+}
+
+.tab-panel--active::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    bottom: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    background: url('images/background-image.png') center / 100% 100% no-repeat;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.tab-panel--active > * {
+    position: relative;
+    z-index: 1;
 }
 
 .tab-panel__image {
@@ -1300,10 +1366,7 @@ input {
         backdrop-filter: blur(30px);
         -webkit-backdrop-filter: blur(30px);
 
-        background:
-            background: linear-gradient(135deg, rgba(20, 10, 50, 0.98) 0%, rgba(35, 18, 80, 0.98) 100%);
-        backdrop-filter: blur(30px);
-        -webkit-backdrop-filter: blur(30px);
+        background: linear-gradient(135deg, rgba(20, 10, 50, 0.98) 0%, rgba(35, 18, 80, 0.98) 100%);
 
         border: 1px solid var(--color-stroke);
         border-radius: var(--radius-lg);
@@ -1360,6 +1423,7 @@ input {
 
     .hero__showcase {
         padding: 30px 50px;
+        width: calc(100% - 48px);
     }
 
     /* ===== SECTIONS ===== */
@@ -1386,6 +1450,10 @@ input {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .output__showcase {
+        padding: 24px;
+    }
+
     /* ===== TABS ===== */
 
     .tabs {
@@ -1395,6 +1463,7 @@ input {
     .tab-panel--active {
         grid-template-columns: 1fr;
         gap: 32px;
+        padding: 24px;
     }
 
     /* ===== TESTIMONIALS ===== */
@@ -1563,6 +1632,7 @@ input {
 
     .hero__showcase {
         padding: 20px 20px;
+        width: calc(100% - 32px);
     }
 
     /* ===== SECTIONS ===== */
@@ -1595,6 +1665,7 @@ input {
     .features__grid {
         grid-template-columns: 1fr;
         gap: 16px;
+        padding: 16px;
     }
 
     /* ===== OUTPUT ===== */
@@ -1602,6 +1673,14 @@ input {
     .output__steps {
         grid-template-columns: 1fr;
         gap: 14px;
+    }
+
+    .output__showcase {
+        padding: 0;
+    }
+
+    .output__image {
+        border-radius: 8px;
     }
 
     .step-card {
@@ -1622,6 +1701,7 @@ input {
 
     .tab-panel--active {
         gap: 24px;
+        padding: 8px;
     }
 
     /* ===== PRICING ===== */

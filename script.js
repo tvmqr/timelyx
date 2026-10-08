@@ -74,6 +74,28 @@ filterBtn.forEach(btn => {
 
 // ===== BENEFITS / TABS =====
 
+const tabButton = document.querySelectorAll('.tab');
+const tabPanel = document.querySelectorAll('.tab-panel');
+
+tabButton.forEach(btn => {
+    btn.addEventListener('click', () => {
+
+        tabButton.forEach(tabNoAct => {
+            tabNoAct.classList.remove('tab--active');
+        });
+        btn.classList.add('tab--active');
+
+
+        tabPanel.forEach(panelka => {
+            if (btn.dataset.tab === panelka.id) {
+                panelka.classList.add('tab-panel--active');
+            } else {
+                panelka.classList.remove('tab-panel--active');
+            }
+        });
+
+    });
+});
 
 
 

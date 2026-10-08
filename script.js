@@ -45,6 +45,41 @@ burger.addEventListener('click', function () {
 
 
 
+// ===== HERO FORM =====
+
+const heroForm = document.querySelector('#hero-form');
+const heroEmail = document.querySelector('#hero-email');
+const heroError = heroForm.querySelector('.error-msg');
+const heroSubmit = heroForm.querySelector('.hero__submit');
+const heroSubmitText = heroSubmit.textContent;
+
+heroForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    if (heroEmail.value.trim() === '' || !heroEmail.checkValidity()) {
+        heroError.style.color = '';
+        heroEmail.classList.add('error');
+        heroError.textContent = 'Enter a valid email';
+    } else {
+        heroEmail.value = '';
+        heroEmail.classList.remove('error');
+        heroError.textContent = '';
+        heroError.style.color = '#4ade80';
+        heroError.textContent = 'Thanks! Check your inbox';
+
+        heroSubmit.textContent = 'Subscribed ✓';
+        heroSubmit.disabled = true;
+
+        setTimeout(() => {
+            heroSubmit.textContent = heroSubmitText;
+            heroSubmit.disabled = false;
+            heroError.textContent = '';
+        }, 2000);
+    }
+});
+
+
+
 // ===== Features =====
 
 const filterBtn = document.querySelectorAll('.filter-btn');
@@ -98,49 +133,41 @@ tabButton.forEach(btn => {
 });
 
 
+// ===== PRICING =====
 
+// ===== PRICING =====
 
+const priceBtn = document.querySelectorAll('.price-btn');
+const priceValue = document.querySelectorAll('.plan__price');
 
+priceBtn.forEach(btn => {
+    btn.addEventListener('click', function() {
 
+        priceBtn.forEach(otherBtn => {
+            otherBtn.classList.remove('price-btn--active');
+        });
+        btn.classList.add('price-btn--active');
 
+        const selectedPeriod = btn.dataset.period;
 
+        priceValue.forEach(price => {
+            price.classList.add('is-changing');
 
+            setTimeout(() => {
+                price.textContent = selectedPeriod === 'month'
+                    ? '$' + price.dataset.month
+                    : '$' + price.dataset.year;
+                price.classList.remove('is-changing');
+            }, 200);
+        });
 
-
-
-
-// ===== HERO FORM =====
-
-const heroForm = document.querySelector('#hero-form');
-const heroEmail = document.querySelector('#hero-email');
-const heroError = heroForm.querySelector('.error-msg');
-const heroSubmit = heroForm.querySelector('.hero__submit');
-const heroSubmitText = heroSubmit.textContent;
-
-heroForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    if (heroEmail.value.trim() === '' || !heroEmail.checkValidity()) {
-        heroError.style.color = '';
-        heroEmail.classList.add('error');
-        heroError.textContent = 'Enter a valid email';
-    } else {
-        heroEmail.value = '';
-        heroEmail.classList.remove('error');
-        heroError.textContent = '';
-        heroError.style.color = '#4ade80';
-        heroError.textContent = 'Thanks! Check your inbox';
-
-        heroSubmit.textContent = 'Subscribed ✓';
-        heroSubmit.disabled = true;
-
-        setTimeout(() => {
-            heroSubmit.textContent = heroSubmitText;
-            heroSubmit.disabled = false;
-            heroError.textContent = '';
-        }, 2000);
-    }
+    });
 });
+
+
+
+
+
 
 
 

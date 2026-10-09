@@ -43,40 +43,53 @@ burger.addEventListener('click', function () {
     burger.setAttribute('aria-expanded', isOpen);
 });
 
-
-
-// ===== HERO FORM =====
-
-const heroForm = document.querySelector('#hero-form');
-const heroEmail = document.querySelector('#hero-email');
-const heroError = heroForm.querySelector('.error-msg');
-const heroSubmit = heroForm.querySelector('.hero__submit');
-const heroSubmitText = heroSubmit.textContent;
-
-heroForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    if (heroEmail.value.trim() === '' || !heroEmail.checkValidity()) {
-        heroError.style.color = '';
-        heroEmail.classList.add('error');
-        heroError.textContent = 'Enter a valid email';
-    } else {
-        heroEmail.value = '';
-        heroEmail.classList.remove('error');
-        heroError.textContent = '';
-        heroError.style.color = '#4ade80';
-        heroError.textContent = 'Thanks! Check your inbox';
-
-        heroSubmit.textContent = 'Subscribed ✓';
-        heroSubmit.disabled = true;
-
-        setTimeout(() => {
-            heroSubmit.textContent = heroSubmitText;
-            heroSubmit.disabled = false;
-            heroError.textContent = '';
-        }, 2000);
-    }
+nav.querySelectorAll('.header__link').forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        burger.setAttribute('aria-expanded', 'false');
+    });
 });
+
+
+
+// ===== EMAIL FORMS (HERO, NEWSLETTER) =====
+
+function setupEmailForm(formSelector) {
+    const form = document.querySelector(formSelector);
+    const email = form.querySelector('input[type="email"]');
+    const error = form.querySelector('.error-msg');
+    const submit = form.querySelector('button[type="submit"]');
+    const submitText = submit.textContent;
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        if (email.value.trim() === '' || !email.checkValidity()) {
+            error.style.color = '';
+            email.classList.add('error');
+            error.textContent = 'Enter a valid email';
+        } else {
+            email.value = '';
+            email.classList.remove('error');
+            error.style.color = '#4ade80';
+            error.textContent = 'Thanks! Check your inbox';
+
+            submit.textContent = 'Subscribed ✓';
+            submit.disabled = true;
+            submit.classList.add('is-success');
+
+            setTimeout(() => {
+                submit.textContent = submitText;
+                submit.disabled = false;
+                error.textContent = '';
+                submit.classList.remove('is-success');
+            }, 2000);
+        }
+    });
+}
+
+setupEmailForm('#hero-form');
+setupEmailForm('#contact-form');
 
 
 

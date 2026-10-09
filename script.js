@@ -166,6 +166,29 @@ priceBtn.forEach(btn => {
 
 
 
+// ===== FAQ =====
+
+const accordionHeader = document.querySelectorAll('.accordion-header');
+
+accordionHeader.forEach(header => {
+    header.addEventListener('click', () => {
+        const item = header.closest('.accordion-item');
+        const isOpen = item.classList.contains('accordion-item--open');
+
+        document.querySelectorAll('.accordion-item').forEach(el => {
+            el.classList.remove('accordion-item--open');
+            el.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+            item.classList.add('accordion-item--open');
+            header.setAttribute('aria-expanded', 'true');
+        }
+    });
+});
+
+
+
 
 
 

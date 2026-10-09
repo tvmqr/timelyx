@@ -967,12 +967,33 @@ input {
     opacity: 0.7;
 }
 
+
+
 /* ===== TESTIMONIALS ===== */
 
 .testimonials__grid {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+}
+
+.testimonials__grid::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    bottom: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    background: url('images/background-image.png') center / 100% 100% no-repeat;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.testimonials__grid > * {
+    position: relative;
+    z-index: 1;
 }
 
 .testimonial-card {
@@ -1062,6 +1083,11 @@ input {
     background-color: var(--color-icon-bg);
     border-radius: 50%;
     flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.accordion-item--open .accordion-header__icon {
+    transform: rotate(45deg);
 }
 
 .accordion-item__body {

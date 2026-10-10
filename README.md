@@ -16,6 +16,7 @@ Built 1:1 from a Figma design.
 - **Responsive design** – desktop-first, three breakpoints (1199 / 767)  
 - **Google Fonts** – Barlow, Inter, Plus Jakarta Sans  
 - **No dependencies** – no jQuery, no React, no build step  
+- **Formspree** – functional email subscribe forms without backend  
 
 ---
 
@@ -29,6 +30,7 @@ Built 1:1 from a Figma design.
 - 🗂 **Tabs** – switch between benefit panels without background flicker.  
 - 💰 **Pricing toggle** – Month/Year switch with animated price swap via `data-month` / `data-year`.  
 - ❓ **FAQ accordion** – single-open behavior with icon rotation and `aria-expanded`.  
+- 📬 **Working email forms** – client-side validation + real submission via Formspree, success state with animation, auto-reset after 2s.  
 - 📱 **Fully responsive** – looks great on every screen, from mobile to 4K.  
 - ♿ **Accessibility** – ARIA states, semantic buttons, hidden labels.  
 - ⚡ **No frameworks, no bloat** – just solid HTML, CSS and JS.

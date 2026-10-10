@@ -65,17 +65,27 @@ function setupEmailForm(formSelector) {
         event.preventDefault();
 
         if (email.value.trim() === '' || !email.checkValidity()) {
-            error.style.color = '';
             email.classList.add('error');
             error.textContent = 'Enter a valid email';
-        } else {
+            return;
+        }
+
+        email.classList.remove('error');
+        submit.disabled = true;
+        submit.textContent = 'Sending...';
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(() => {
             email.value = '';
-            email.classList.remove('error');
             error.style.color = '#4ade80';
             error.textContent = 'Thanks! Check your inbox';
-
             submit.textContent = 'Subscribed ✓';
-            submit.disabled = true;
             submit.classList.add('is-success');
 
             setTimeout(() => {
@@ -84,7 +94,13 @@ function setupEmailForm(formSelector) {
                 error.textContent = '';
                 submit.classList.remove('is-success');
             }, 2000);
-        }
+        })
+        .catch(() => {
+            error.style.color = '';
+            error.textContent = 'Something went wrong';
+            submit.textContent = submitText;
+            submit.disabled = false;
+        });
     });
 }
 
